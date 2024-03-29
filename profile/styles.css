@@ -7,7 +7,7 @@
 
 /* Style for the body */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f4f4f4;
   padding: 20px;
 }
@@ -20,16 +20,14 @@ h1 {
   color: #444;
 }
 
-/* Style for the back button */
 .back-picture {
-  width: 30px;
+  width: 50px;
   height: auto;
   position: absolute;
   top: 10px;
   left: 10px;
 }
 
-/* Style for the container */
 .form-container {
   text-align: center;
   margin-bottom: 20px;
@@ -61,7 +59,6 @@ h1 {
   background-color: #45a049;
 }
 
-
 /* Style for the anime list */
 .anime-list {
   list-style-type: none;
@@ -75,20 +72,17 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
 /* Style for anime name */
-.animeName {
+.animeName,
+.animeRating {
   font-weight: bold;
   font-size: 1.5em;
   color: #333;
-}
-
-/* Style for anime rating */
-.animeRating {
-  font-style: italic;
-  color: #666;
-  font-size: 1.2em;
 }
 
 .star-container {
@@ -96,9 +90,8 @@ h1 {
 }
 
 .star-container .star {
-  font-size: 20px;
+  font-size: 30px;
   color: #ddd;
-  cursor: pointer;
   transition: color 0.2s ease-in-out;
 }
 
@@ -123,7 +116,9 @@ h1 {
 }
 
 /* Style for the filter buttons */
-.filter-button, .sort-button, .reset-button {
+.filter-button,
+.sort-button,
+.reset-button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -135,7 +130,80 @@ h1 {
   margin: 0 5px;
 }
 
-.filter-button:hover, .sort-button:hover, .reset-button:hover {
+.filter-button:hover,
+.sort-button:hover,
+.reset-button:hover {
   background-color: #0056b3;
+}
+
+/* Style for the input fields */
+.animeItem input[type="text"],
+.animeItem input[type="number"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style for the submit button */
+.animeItem button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+}
+
+.animeItem button:hover {
+  background-color: #3e8e41;
+}
+
+.animeItem button:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+.animeItem img {
+  margin-bottom: 10px; 
+}
+
+.animeName,
+.animeRating {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px; 
+}
+
+.edit-pencil {
+  width: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.remove-button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  width: 20px;
+}
+
+.animeItem button.edit-button {
+  display: none;
+  margin-top: auto; 
 }
 

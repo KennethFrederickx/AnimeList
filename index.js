@@ -14,7 +14,7 @@ function createWindow() {
         }
     });
 
-    win.loadFile('index.html');
+    win.loadFile('profile/index.html');
 
     win.webContents.on('did-finish-load', () => {
         win.webContents.send('load-animes', data);
@@ -43,7 +43,14 @@ ipcMain.on('write-to-file', (event, arg) => {
     });
 });
 
-// New IPC event to handle updating positions
+ipcMain.on('update-anime-list', (event, updatedData) => {
+    data = updatedData;
+    fs.writeFile('animes.json', JSON.stringify(data, null, 2), (err) => {
+        if (err) throw err;
+        console.log('Anime list updated');
+    });
+});
+
 ipcMain.on('update-anime-position', (event, updatedData) => {
     data = updatedData;
     fs.writeFile('animes.json', JSON.stringify(data, null, 2), (err) => {

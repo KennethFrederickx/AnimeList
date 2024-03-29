@@ -5,19 +5,19 @@
     "rating": 5
   },
   {
-    "name": "Naruto",
+    "name": "Demon Slayer",
     "link": "www.google.com",
-    "rating": 2
-  },
-  {
-    "name": "My Hero Academia",
-    "link": "www.google.com",
-    "rating": 3
+    "rating": 5
   },
   {
     "name": "Attack on Titan",
     "link": "www.google.com",
     "rating": 5
+  },
+  {
+    "name": "My Hero Academia",
+    "link": "www.google.com",
+    "rating": 3
   },
   {
     "name": "One Piece",
@@ -26,11 +26,6 @@
   },
   {
     "name": "Fullmetal Alchemist: Brotherhood",
-    "link": "www.google.com",
-    "rating": 5
-  },
-  {
-    "name": "Demon Slayer",
     "link": "www.google.com",
     "rating": 5
   }

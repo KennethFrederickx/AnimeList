@@ -19,8 +19,11 @@ function displayAnimeList(animes) {
         animeDiv.setAttribute('id', `anime-${index}`);
         animeDiv.setAttribute('data-position', index);
         animeDiv.innerHTML = `
+            <img class="edit-pencil" src="../images/pencil-edit-button.svg" alt="Edit" onclick="showEditButtons(${index})">
+            <span class="animeRating">${index + 1}. </span>
             <span class="animeName">${anime.name}</span><br>
-            <span class="animeRating">Position: ${index + 1}</span><br>
+            <img class="remove-button" style="display: none;" src="../images/trash-bin-icon.png" alt="Remove" onclick="removeAnime(${index})">
+            <button class="edit-button" style="display: none;" onclick="editAnime(${index})">Edit</button>
         `;
         animeList.appendChild(animeDiv);
         const starContainer = document.createElement('div');
@@ -100,8 +103,100 @@ function drop(ev) {
 function updateAnimePositions() {
     const animeItems = document.querySelectorAll('.animeItem');
     animeItems.forEach((item, index) => {
+        console.log(item);
         const positionElement = item.querySelector('.animeRating');
-        positionElement.textContent = `Position: ${index + 1}`;
+        positionElement.textContent = `${index + 1}. `;
         item.setAttribute('data-position', index);
+    });
+}
+
+function removeAnime(index) {
+    const updatedAnimes = [...originalAnimes];
+    updatedAnimes.splice(index, 1);
+    ipcRenderer.send('update-anime-list', updatedAnimes);
+    window.location.reload();
+}
+
+function editAnime(index) {
+    const animeDiv = document.getElementById(`anime-${index}`);
+    const isEditing = animeDiv.classList.contains('editing');
+
+    // If already editing, return to prevent duplication
+    if (isEditing) {
+        return;
+    }
+
+    // Mark the anime div as editing
+    animeDiv.classList.add('editing');
+
+    // Get the current name and rating of the anime
+    const currentName = originalAnimes[index].name;
+    const currentRating = originalAnimes[index].rating;
+
+    // Create input fields for new name and rating
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.value = currentName; // Set the initial value to the current name
+    const ratingInput = document.createElement('input');
+    ratingInput.type = 'number';
+    ratingInput.min = 1;
+    ratingInput.max = 5;
+    ratingInput.value = currentRating;
+
+    // Create submit button
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Submit';
+    submitButton.onclick = () => {
+        const newName = nameInput.value;
+        const newRating = parseInt(ratingInput.value);
+        if (newName && !isNaN(newRating) && newRating >= 1 && newRating <= 5) {
+            const updatedAnimes = [...originalAnimes];
+            updatedAnimes[index].name = newName;
+            updatedAnimes[index].rating = newRating;
+            ipcRenderer.send('update-anime-list', updatedAnimes);
+            window.location.reload();
+
+        } else {
+            alert("Invalid input. Please enter a valid name and rating.");
+        }
+        // Remove editing flag and input fields
+        animeDiv.classList.remove('editing');
+        nameInput.remove();
+        ratingInput.remove();
+        submitButton.remove();
+    };
+
+    // Append input fields and submit button to the anime div
+    animeDiv.appendChild(nameInput);
+    animeDiv.appendChild(ratingInput);
+    animeDiv.appendChild(submitButton);
+}
+
+// Function to show edit buttons for a specific anime item
+function showEditButtons(index) {
+    // Hide edit buttons for all anime items
+    hideEditButtons();
+
+    // Get the corresponding anime item
+    const animeItem = document.getElementById(`anime-${index}`);
+
+    // Show edit buttons for the clicked anime item
+    const editButton = animeItem.querySelector('.edit-button');
+    const removeButton = animeItem.querySelector('.remove-button');
+    editButton.style.display = 'block';
+    removeButton.style.display = 'block';
+}
+
+// Function to hide edit buttons for all anime items
+function hideEditButtons() {
+    const editButtons = document.querySelectorAll('.edit-button');
+    const removeButtons = document.querySelectorAll('.remove-button');
+
+    editButtons.forEach(button => {
+        button.style.display = 'none';
+    });
+
+    removeButtons.forEach(button => {
+        button.style.display = 'none';
     });
 }
