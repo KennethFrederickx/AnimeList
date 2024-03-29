@@ -1,0 +1,97 @@
+/* styles.css */
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+}
+
+/* Form container styles */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Star styles */
+.star-container {
+    margin-bottom: 60px;
+}
+
+.star {
+    font-size: 36px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.star:hover,
+.star.active {
+    color: #ffcc00; /* Yellow color for active stars */
+}
+
+/* Input styles */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #ffcc00; /* Yellow border color on focus */
+}
+
+/* Submit button styles */
+input[type="button"] {
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="button"]:hover {
+    background-color: #ffa500; /* Darker yellow on hover */
+}
+
+/* Star colors */
+.one {
+    color: rgb(255, 0, 0);
+}
+
+.two {
+    color: rgb(255, 106, 0);
+}
+
+.three {
+    color: rgb(251, 255, 120);
+}
+
+.four {
+    color: rgb(255, 255, 0);
+}
+
+.five {
+    color: rgb(24, 159, 14);
+}
+
+.profile-picture {
+    width: 50px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+}

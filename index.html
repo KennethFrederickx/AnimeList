@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Add Anime To List</h1>
+    <a href="profile/index.html">
+      <img class="profile-picture" src="images/profilepicture.png" alt="Go to Profile">
+    </a>
+      <form id="animeForm">
+        <label for="name">Anime Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="link">Link (optional): </label><br>
+        <input type="text" id="link" name="link"><br>
+        <input type="hidden" id="starRating" name="rating">
+        <div class="card">
+            <br />
+            <span onclick="gfg(1)" class="star">★</span>
+            <span onclick="gfg(2)" class="star">★</span>
+            <span onclick="gfg(3)" class="star">★</span>
+            <span onclick="gfg(4)" class="star">★</span>
+            <span onclick="gfg(5)" class="star">★</span>
+        </div>
+        <input type="button" value="Submit" onclick="addAnime()">
+    </form>
+    <div id="animeList"></div>
+    <script src="script.js">
+    </script>
+  </body>
+</html>.30
