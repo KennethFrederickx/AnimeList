@@ -211,3 +211,10 @@ h1 {
   margin-top: auto; /* Push the button to the bottom */
 }
 
+.linkImage{
+  width: 20px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  cursor: pointer;
+}

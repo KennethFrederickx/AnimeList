@@ -1,4 +1,5 @@
 const { ipcRenderer } = require('electron');
+const { shell } = require('electron');
 
 let originalAnimes = [];
 
@@ -19,16 +20,20 @@ function displayAnimeList(animes) {
         animeDiv.setAttribute('id', `anime-${index}`);
         animeDiv.setAttribute('data-position', index);
         animeDiv.innerHTML = `
-            <img class="edit-pencil" src="../images/pencil-edit-button.svg" alt="Edit" onclick="showEditButtons(${index})">
             <span class="animeRating">${index + 1}. </span>
             <span class="animeName">${anime.name}</span><br>
+            <div class="star-container">
+                <!-- Stars go here -->
+            </div>
             <img class="remove-button" style="display: none;" src="../images/trash-bin-icon.png" alt="Remove" onclick="removeAnime(${index})">
             <button class="edit-button" style="display: none;" onclick="editAnime(${index})">Edit</button>
+            <img class="linkImage" src="../images/link.png" alt="${anime.name}" onclick="openMAL('${anime.name}')">
+            <img class="edit-pencil" src="../images/pencil-edit-button.svg" alt="Edit" onclick="showEditButtons(${index})">
+            <button class="show-details-button" onclick="showDetails(${index})">Show Details</button>
+            <div id="details-${index}" class="anime-details"></div>
         `;
         animeList.appendChild(animeDiv);
-        const starContainer = document.createElement('div');
-        starContainer.classList.add('star-container');
-        animeDiv.appendChild(starContainer);
+        const starContainer = animeDiv.querySelector('.star-container');
         for (let i = 1; i <= anime.rating; i++) {
             const star = document.createElement('span');
             star.textContent = '★';
@@ -48,6 +53,7 @@ function displayAnimeList(animes) {
         });
     });
 }
+
 
 function updateAnimePosition(animes, startingIndex, endingIndex) {
     const updatedAnimes = [...animes];
@@ -199,4 +205,64 @@ function hideEditButtons() {
     removeButtons.forEach(button => {
         button.style.display = 'none';
     });
+}
+
+// Function to fetch and display details when "Show Details" button is clicked
+async function showDetails(index) {
+    const animeName = originalAnimes[index].name;
+    const detailsButton = document.querySelector(`#anime-${index} .show-details-button`);
+    try {
+        const response = await fetch(`https://api.jikan.moe/v4/anime?q=${animeName}&sfw`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        const animeDetailsDiv = document.getElementById(`details-${index}`);
+        animeDetailsDiv.innerHTML = `
+            <img src="${data.data[0].images.jpg.large_image_url}" alt="${data.data[0].titles[0].title}">
+            <p>${data.data[0].rating}, ${data.data[0].studios[0].name}</p>
+            <h1>${data.data[0].title_japanese}</h1>
+            <p>${data.data[0].synopsis}</p><br>
+            <p>Genres: ${data.data[0].genres.map(genre => genre.name).join(', ')}</p>
+            <p>Themes: ${data.data[0].themes.map(theme => theme.name).join(', ')}</p>
+        
+        `;
+        // Toggle show/hide details button
+        if (detailsButton.textContent === 'Show Details') {
+            detailsButton.textContent = 'Hide Details';
+        } else {
+            detailsButton.textContent = 'Show Details';
+            animeDetailsDiv.innerHTML = ''; // Clear details when hiding
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+
+async function openMAL(animeName) {
+    try {
+        const response = await fetch(`https://api.jikan.moe/v4/anime?q=${animeName}&sfw`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        shell.openExternal(data.data[0].url);
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+//fetching data from the api
+async function fetchData(animeName) {
+    try {
+        const response = await fetch(`https://api.jikan.moe/v4/anime?q=${animeName}&sfw`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        shell.openExternal(data.data[0].url);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
 }
