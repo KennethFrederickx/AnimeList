@@ -5,19 +5,6 @@ body {
   padding: 20px;
 }
 
-/* Style for the profile heading */
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Style for anime list container */
-#animeList {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 /* Style for individual anime items */
 .animeItem {
   background-color: #f0f0f0;
@@ -30,13 +17,38 @@ h1 {
   font-weight: bold;
 }
 
-/* Style for anime link */
-.animeLink {
-  color: blue;
-  text-decoration: underline;
-}
-
 /* Style for anime rating */
 .animeRating {
   font-style: italic;
+}
+
+.star-container {
+  margin-bottom: 10px;
+}
+
+.star-container .star {
+  font-size: 20px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.star-container .one {
+  color: rgb(255, 0, 0);
+}
+
+.star-container .two {
+  color: rgb(255, 106, 0);
+}
+
+.star-container .three {
+  color: rgb(251, 255, 120);
+}
+
+.star-container .four {
+  color: rgb(255, 255, 0);
+}
+
+.star-container .five {
+  color: rgb(24, 159, 14);
 }
