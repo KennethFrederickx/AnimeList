@@ -20,7 +20,7 @@
         <button class="sort-button" onclick="sortAnimeByRating()">Sort by Rating</button>
         <button class="reset-button" onclick="resetFilters()">Reset Filters</button>
     </div>
-    <div id="name" class="anime-list"></div>
+    <div id="name" class="anime-list" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
     <script src="index.js"></script>
 </body>
 </html>

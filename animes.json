@@ -1,20 +1,21 @@
 [
   {
-    "name": "Attack on Titan",
+    "name": "Death Note",
     "link": "www.google.com",
     "rating": 5
   },
   {
-    "name": "My Hero Academia",
-    "link": "www.google.com",
-    "rating": 3
-  },{
     "name": "Naruto",
     "link": "www.google.com",
     "rating": 2
   },
   {
-    "name": "Death Note",
+    "name": "My Hero Academia",
+    "link": "www.google.com",
+    "rating": 3
+  },
+  {
+    "name": "Attack on Titan",
     "link": "www.google.com",
     "rating": 5
   },
@@ -24,13 +25,13 @@
     "rating": 1
   },
   {
-    "name": "Demon Slayer",
+    "name": "Fullmetal Alchemist: Brotherhood",
     "link": "www.google.com",
     "rating": 5
   },
   {
-    "name": "Fullmetal Alchemist: Brotherhood",
+    "name": "Demon Slayer",
     "link": "www.google.com",
     "rating": 5
   }
-] 
+]
