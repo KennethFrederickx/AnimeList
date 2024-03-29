@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="../index.html">
+        <img class="back-picture" src="../images/return-button.svg" alt="Go Back">
+    </a>
     <h1>Anime List</h1>
+    <div class="form-container">
+        <label for="minRating">Minimum Rating:</label>
+        <input type="number" id="minRating" name="minRating" min="1" max="5">
+        <label for="maxRating">Maximum Rating:</label>
+        <input type="number" id="maxRating" name="maxRating" min="1" max="5">
+        <button class="filter-button" onclick="filterAnimeByRating(parseInt(document.getElementById('minRating').value), parseInt(document.getElementById('maxRating').value))">Filter by Rating</button>
+        <button class="sort-button" onclick="sortAnimeByRating()">Sort by Rating</button>
+        <button class="reset-button" onclick="resetFilters()">Reset Filters</button>
+    </div>
     <div id="name" class="anime-list"></div>
-
     <script src="index.js"></script>
 </body>
 </html>

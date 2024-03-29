@@ -1,8 +1,16 @@
 const { ipcRenderer } = require('electron');
 
+let originalAnimes = [];
+
 ipcRenderer.on('load-animes', (event, animes) => {
     const animeList = document.getElementById('name');
+    animeList.innerHTML = '';
+    originalAnimes = animes;
+    displayAnimeList(animes);
+});
 
+function displayAnimeList(animes) {
+    const animeList = document.getElementById('name');
     animeList.innerHTML = '';
     animes.forEach(anime => {
         const animeDiv = document.createElement('div');
@@ -12,11 +20,9 @@ ipcRenderer.on('load-animes', (event, animes) => {
             <span class="animeRating">Rating: ${anime.rating}</span><br>
         `;
         animeList.appendChild(animeDiv);
-
         const starContainer = document.createElement('div');
         starContainer.classList.add('star-container');
         animeDiv.appendChild(starContainer);
-
         for (let i = 1; i <= anime.rating; i++) {
             const star = document.createElement('span');
             star.textContent = '★';
@@ -24,7 +30,21 @@ ipcRenderer.on('load-animes', (event, animes) => {
             starContainer.appendChild(star);
         }
     });
-});
+}
+
+function sortAnimeByRating() {
+    const sortedAnimes = [...originalAnimes].sort((a, b) => b.rating - a.rating);
+    displayAnimeList(sortedAnimes);
+}
+
+function filterAnimeByRating(minRating, maxRating) {
+    const filteredAnimes = originalAnimes.filter(anime => anime.rating >= minRating && anime.rating <= maxRating);
+    displayAnimeList(filteredAnimes);
+}
+
+function resetFilters() {
+    displayAnimeList(originalAnimes);
+}
 
 function getStarClass(rating) {
     if (rating === 1) return 'one';

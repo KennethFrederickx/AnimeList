@@ -1,25 +1,94 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Style for the body */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
   padding: 20px;
+}
+
+/* Style for the header */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #444;
+}
+
+/* Style for the back button */
+.back-picture {
+  width: 30px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Style for the container */
+.form-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  margin-right: 10px;
+}
+
+.form-container input {
+  width: 60px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-container button {
+  padding: 8px 15px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+
+/* Style for the anime list */
+.anime-list {
+  list-style-type: none;
+  padding: 0;
 }
 
 /* Style for individual anime items */
 .animeItem {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 /* Style for anime name */
 .animeName {
   font-weight: bold;
+  font-size: 1.5em;
+  color: #333;
 }
 
 /* Style for anime rating */
 .animeRating {
   font-style: italic;
+  color: #666;
+  font-size: 1.2em;
 }
 
 .star-container {
@@ -52,3 +121,21 @@ body {
 .star-container .five {
   color: rgb(24, 159, 14);
 }
+
+/* Style for the filter buttons */
+.filter-button, .sort-button, .reset-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+}
+
+.filter-button:hover, .sort-button:hover, .reset-button:hover {
+  background-color: #0056b3;
+}
+

@@ -8,5 +8,29 @@
     "name": "My Hero Academia",
     "link": "www.google.com",
     "rating": 3
+  },{
+    "name": "Naruto",
+    "link": "www.google.com",
+    "rating": 2
+  },
+  {
+    "name": "Death Note",
+    "link": "www.google.com",
+    "rating": 5
+  },
+  {
+    "name": "One Piece",
+    "link": "www.google.com",
+    "rating": 1
+  },
+  {
+    "name": "Demon Slayer",
+    "link": "www.google.com",
+    "rating": 5
+  },
+  {
+    "name": "Fullmetal Alchemist: Brotherhood",
+    "link": "www.google.com",
+    "rating": 5
   }
 ] 
