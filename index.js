@@ -11,7 +11,6 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
-      contentSecurityPolicy: "script-src 'self' 'unsafe-inline' 'unsafe-eval';",
     }
   });
 

@@ -151,7 +151,7 @@ function editAnime(index) {
 
     // Create submit button
     const submitButton = document.createElement('button');
-    submitButton.textContent = 'Submit';
+    submitButton.textContent = 'Done';
     submitButton.onclick = () => {
         const newName = nameInput.value;
         const newRating = parseInt(ratingInput.value);

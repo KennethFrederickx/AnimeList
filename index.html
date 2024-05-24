@@ -9,19 +9,18 @@
       <img class="profile-picture" src="images/profilepicture.png" alt="Go to Profile">
     </a>
       <form id="animeForm">
+        <br>
         <label for="name">Anime Name:</label><br>
         <input type="text" id="name" name="name"><br>
-        <label for="link">Link (optional): </label><br>
-        <input type="text" id="link" name="link"><br>
         <input type="hidden" id="starRating" name="rating">
         <div class="card">
-            <br />
             <span onclick="gfg(1)" class="star">★</span>
             <span onclick="gfg(2)" class="star">★</span>
             <span onclick="gfg(3)" class="star">★</span>
             <span onclick="gfg(4)" class="star">★</span>
             <span onclick="gfg(5)" class="star">★</span>
         </div>
+        <br>
         <input type="button" value="Submit" onclick="addAnime()">
     </form>
     <script src="script.js">

@@ -3,12 +3,10 @@ const { ipcRenderer } = require('electron');
 
 function addAnime() {
     const name = document.getElementById('name').value;
-    const link = document.getElementById('link').value;
     const rating = document.getElementById('starRating').value;
 
     const newAnime = {
         name: name,
-        link: link,
         rating: parseFloat(rating)
     };
 

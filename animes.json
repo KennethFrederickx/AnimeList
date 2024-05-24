@@ -1,18 +1,13 @@
 [
   {
-    "name": "Overlord",
-    "link": "",
-    "rating": 5
-  },
-  {
     "name": "Demon Slayer",
     "link": "www.google.com",
     "rating": 5
   },
   {
-    "name": "Attack on Titan",
-    "link": "www.google.com",
-    "rating": 5
+    "name": "Overlord",
+    "link": "",
+    "rating": 4
   },
   {
     "name": "Death Note",
@@ -20,9 +15,9 @@
     "rating": 4
   },
   {
-    "name": "My Hero Academia",
+    "name": "Attack on Titan",
     "link": "www.google.com",
-    "rating": 2
+    "rating": 5
   },
   {
     "name": "One Piece",
@@ -30,13 +25,29 @@
     "rating": 1
   },
   {
+    "name": "My Hero Academia",
+    "link": "www.google.com",
+    "rating": 4
+  },
+  {
     "name": "Fullmetal Alchemist: Brotherhood",
     "link": "www.google.com",
     "rating": 5
   },
   {
-    "name": "demon slayer season 2",
-    "link": "",
+    "name": "a silent voice",
+    "rating": 4
+  },
+  {
+    "name": "parasite the maxim",
+    "rating": 4
+  },
+  {
+    "name": "Solo Leveling",
+    "rating": 5
+  },
+  {
+    "name": "Frieren",
     "rating": 5
   }
 ]
