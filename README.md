@@ -33,14 +33,14 @@ Please install latest release
 
 4. **Build for Production To package the application for production, use:**
 
-   ```bash
+```bash
    npm run build
-    ```
+```
 
 The installer will be generated in the dist directory.
 
 ## Usage
-###Adding Anime
+### Adding Anime
 1. Open the application.
 2. Enter the anime name in the input field.
 3. Rate the anime using the star rating system.
