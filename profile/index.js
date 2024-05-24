@@ -20,13 +20,12 @@ function displayAnimeList(animes) {
         animeDiv.setAttribute('id', `anime-${index}`);
         animeDiv.setAttribute('data-position', index);
         animeDiv.innerHTML = `
-            <span class="animeRating">${index + 1}. </span>
+            <span class="animeRating">${index + 1}</span>
             <span class="animeName">${anime.name}</span><br>
             <div class="star-container">
                 <!-- Stars go here -->
             </div>
             <img class="remove-button" style="display: none;" src="../images/trash-bin-icon.png" alt="Remove" onclick="removeAnime(${index})">
-            <button class="edit-button" style="display: none;" onclick="editAnime(${index})">Edit</button>
             <img class="linkImage" src="../images/link.png" alt="${anime.name}" onclick="openMAL('${anime.name}')">
             <img class="edit-pencil" src="../images/pencil-edit-button.svg" alt="Edit" onclick="showEditButtons(${index})">
             <button class="show-details-button" onclick="showDetails(${index})">Show Details</button>
@@ -187,10 +186,10 @@ function showEditButtons(index) {
     const animeItem = document.getElementById(`anime-${index}`);
 
     // Show edit buttons for the clicked anime item
-    const editButton = animeItem.querySelector('.edit-button');
     const removeButton = animeItem.querySelector('.remove-button');
-    editButton.style.display = 'block';
-    removeButton.style.display = 'block';
+    removeButton.style.display = 'block'
+    
+    editAnime(index);
 }
 
 // Function to hide edit buttons for all anime items
