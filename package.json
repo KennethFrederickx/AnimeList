@@ -1,17 +1,34 @@
 {
-  "name": "animelist",
+  "name": "my-animelist-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Anime List App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "electron": "^29.1.5",
-    "electron-fetch": "^1.9.1"
+  "build": {
+    "appId": "com.yourname.myapp",
+    "files": [
+      "**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "images/overlord.ico"
+    },
+    "mac": {
+      "icon": "images/overlord.png"
+    },
+    "linux": {
+      "icon": "images/overlord.png"
+    }
+  },
+  "devDependencies": {
+    "electron": "^14.0.0",
+    "electron-builder": "^22.14.13"
   }
 }
