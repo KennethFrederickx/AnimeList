@@ -1,32 +1,29 @@
-/* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styles */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #333; /* Changed to dark background */
-    color: #f5f5f5; /* Changed to light text color */
+    background-color: #333; 
+    color: #f5f5f5; 
     padding: 20px;
 }
 
-/* Main container styles */
 .main-container {
     display: flex;
     gap: 20px;
 }
 
-/* Form container styles */
 .form-container {
     flex: 1;
     max-width: 600px;
     padding: 20px;
-    background-color: #444; /* Box background color */
+    background-color: #444; 
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
 #animeForm {
@@ -42,22 +39,27 @@ body {
     width: 100%;
 }
 
-/* Top anime container styles */
+.success-message {
+    color: #4caf50;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
 .top-anime-container {
     flex: 1;
     padding: 20px;
-    background-color: #444; /* Box background color */
+    background-color: #444;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
-/* Random anime container styles */
+
 .random-anime-container {
     margin-top: 20px;
     padding: 20px;
-    background-color: #555; /* Slightly different background color for separation */
+    background-color: #555; 
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     text-align: center;
     width: 100%;
 }
@@ -112,41 +114,38 @@ body {
     text-align: left;
 }
 
-/* Star styles */
 .star-container {
     margin-bottom: 60px;
 }
 
 .star {
     font-size: 36px;
-    color: #555; /* Dark gray for inactive stars */
+    color: #555; 
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
 .star:hover,
 .star.active {
-    color: #ffcc00; /* Yellow color for active stars */
+    color: #ffcc00;
 }
 
-/* Input styles */
 input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 4px;
-    border: 1px solid #555; /* Dark border color */
-    background-color: #555; /* Dark background color */
-    color: #f5f5f5; /* Light text color */
+    border: 1px solid #555; 
+    background-color: #555; 
+    color: #f5f5f5; 
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 input[type="text"]:focus {
     border-color: #4caf50;
-    background-color: #666; /* Slightly lighter background on focus */
+    background-color: #666; 
 }
 
-/* Submit button styles */
 input[type="button"] {
     background-color: #4caf50;
     color: #fff;
@@ -182,7 +181,6 @@ input[type="button"]:hover {
     color: rgb(24, 159, 14);
 }
 
-/* Profile picture styles */
 .profile-picture {
     width: 50px;
     height: auto;
@@ -190,10 +188,9 @@ input[type="button"]:hover {
     top: 10px;
     right: 10px;
     border-radius: 50%;
-    border: 2px solid #fff; /* White border to stand out on dark background */
+    border: 2px solid #fff; 
 }
 
-/* Top anime list styles */
 #topAnimeContainer {
     margin-top: 20px;
 }
@@ -222,7 +219,6 @@ input[type="button"]:hover {
     font-size: 16px;
 }
 
-/* Link styles */
 .anime-item a {
     text-decoration: none;
     color: #f5f5f5;

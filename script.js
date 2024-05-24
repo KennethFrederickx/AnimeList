@@ -14,6 +14,13 @@ function addAnime() {
     };
 
     ipcRenderer.send('write-to-file', newAnime);
+    
+    const successMessage = document.getElementById('successMessage');
+    successMessage.style.display = 'block';
+    
+    setTimeout(() => {
+        successMessage.style.display = 'none';
+    }, 3000);
 }
 
 let stars = document.getElementsByClassName("star");
