@@ -189,6 +189,9 @@ function showEditButtons(index) {
     const removeButton = animeItem.querySelector('.remove-button');
     removeButton.style.display = 'block'
     
+    const animeRating = animeItem.querySelector('.animeRating');
+    animeRating.style.display = 'none';
+
     editAnime(index);
 }
 
