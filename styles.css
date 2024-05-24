@@ -13,10 +13,29 @@ body {
     padding: 20px;
 }
 
+/* Main container styles */
+.main-container {
+    display: flex;
+    gap: 20px;
+}
+
 /* Form container styles */
 .form-container {
+    flex: 1;
     max-width: 600px;
-    margin: 0 auto;
+    padding: 20px;
+    background-color: #444; /* Box background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+}
+
+/* Top anime container styles */
+.top-anime-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #444; /* Box background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
 }
 
 /* Star styles */
@@ -98,4 +117,44 @@ input[type="button"]:hover {
     right: 10px;
     border-radius: 50%;
     border: 2px solid #fff; /* White border to stand out on dark background */
+}
+
+/* Top anime list styles */
+#topAnimeContainer {
+    margin-top: 20px;
+}
+
+#topAnimeList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.anime-item {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    width: 150px;
+}
+
+.anime-item img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.anime-item h3 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Link styles */
+.anime-item a {
+    text-decoration: none;
+    color: #f5f5f5;
+    transition: color 0.3s ease;
+}
+
+.anime-item a:hover {
+    color: #4caf50;
 }
