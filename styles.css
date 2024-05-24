@@ -29,6 +29,19 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
 }
 
+#animeForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#animeForm label,
+#animeForm input,
+#animeForm .card,
+#animeForm input[type="button"] {
+    width: 100%;
+}
+
 /* Top anime container styles */
 .top-anime-container {
     flex: 1;
@@ -36,6 +49,67 @@ body {
     background-color: #444; /* Box background color */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+}
+
+/* Random anime container styles */
+.random-anime-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #555; /* Slightly different background color for separation */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+    text-align: center;
+    width: 100%;
+}
+
+.random-anime-container button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.random-anime-container button:hover {
+    background-color: #45a049;
+}
+
+.random-anime-container .anime-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.random-anime-container .anime-item:hover {
+    transform: translateY(-10px);
+}
+
+.random-anime-container .anime-item img {
+    max-width: 150px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.random-anime-container .anime-item h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.random-anime-container .anime-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+    text-align: left;
 }
 
 /* Star styles */

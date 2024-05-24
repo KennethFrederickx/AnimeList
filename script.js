@@ -79,3 +79,43 @@ function displayTopAnime(animeList) {
     });
 }
 
+function fetchRandomAnime() {
+    fetch('https://api.jikan.moe/v4/random/anime')
+        .then(response => response.json())
+        .then(data => {
+            displayRandomAnime(data.data);
+        })
+        .catch(error => console.error('Error fetching random anime:', error));
+}
+
+function displayRandomAnime(anime) {
+    const randomAnimeContainer = document.getElementById('randomAnime');
+    randomAnimeContainer.innerHTML = '';
+
+    const animeItem = document.createElement('div');
+    animeItem.classList.add('anime-item');
+
+    const animeLink = document.createElement('a');
+    animeLink.href = '#';
+    animeLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        shell.openExternal(anime.url);
+    });
+
+    const animeImage = document.createElement('img');
+    animeImage.src = anime.images.jpg.image_url;
+    animeImage.alt = anime.title;
+
+    const animeTitle = document.createElement('h3');
+    animeTitle.textContent = anime.title;
+
+    const animeSynopsis = document.createElement('p');
+    animeSynopsis.textContent = anime.synopsis;
+
+    animeLink.appendChild(animeImage);
+    animeLink.appendChild(animeTitle);
+
+    animeItem.appendChild(animeLink);
+    animeItem.appendChild(animeSynopsis);
+    randomAnimeContainer.appendChild(animeItem);
+}
